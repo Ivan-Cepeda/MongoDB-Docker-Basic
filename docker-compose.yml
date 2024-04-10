@@ -1,0 +1,27 @@
+version: '2.2'
+
+services:
+
+  mongo:
+    image: mongo:4.0.4
+    restart: always
+    container_name: monguito
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - ./monguitodata:/data/db
+      - ./monguitodata/log:/var/log/mongodb/
+    ports:
+      - "27017:27017"
+
+  mongo-express:
+    image: mongo-express #revisar version
+    container_name: mongoEX
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: monguito

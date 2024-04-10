@@ -1,0 +1,23 @@
+				COMANDOS MONGO DB
+_______________________
+Mostrar Bases de datos:
+
+> show dbs
+______________________________________
+Crear o ubicarse en uns base de datos:
+
+> use databasename
+_______________________________________
+Saber que base de datos estamos usando:
+
+> db
+________________
+Crear colección:
+ 
+> db.createCollection('nameCollection')
+{"Clave": "Valor"}
+
+________________
+Mostrar el contenido de una colección:
+
+> showCollections
